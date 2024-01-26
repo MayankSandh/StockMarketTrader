@@ -2,7 +2,8 @@ import yfinance as yf
 from random import randint
 from utils import calculate_future_date
 from broker import Broker
-import talib
+from strategies import StockFunctions
+# import talib
 
 def random_action(shares):
     action = randint(-1, 1)
@@ -48,6 +49,7 @@ end_date = calculate_future_date(start_date, 365*5)
 infosys_data = yf.download(symbol, start=start_date, end=end_date)
 
 broker = Broker()
+functions = StockFunctions(infosys_data)
 
 # DATA
 moving_average_data = []

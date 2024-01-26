@@ -1,3 +1,4 @@
+
 class Broker:
     shares = 0
     money = 0
@@ -7,6 +8,7 @@ class Broker:
     sell_amt = 0
     buy_share = 0
     sell_share = 0
+
 
     def __init__(self):
         pass
@@ -30,5 +32,5 @@ class Broker:
     def show_buy_and_sell_shares(self):
         print(f"Buy shares: {self.buy_share} | Sell share: {self.sell_share}")
     def show_returns(self, share_rem_value):
-        print("Returns:", (self.money+ self.shares*share_rem_value)/self.buy_amt*100)
+        print("Returns:", (self.money+ self.shares*share_rem_value)/max(self.buy_amt, 1/1000000000)*100)
 
